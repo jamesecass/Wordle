@@ -4,10 +4,10 @@ import fonts
 import random
 import words
 
-class Woordle:
+class Wordle:
     def __init__(self):
         self.window = Tk()
-        self.window.title("Woordle")
+        self.window.title("Wordle")
         self.icon = PhotoImage(file="logo.png")
         self.window.iconphoto(True,self.icon)
 
@@ -18,7 +18,7 @@ class Woordle:
 
         fonts.font()
 
-        self.label = Label(self.window, text="Woordle",font=("Roboto Mono", 30, "bold"), bg="white")
+        self.label = Label(self.window, text="Wordle",font=("Roboto Mono", 30, "bold"), bg="white")
         self.label.grid(row=0, column=0, pady=20, sticky="n")
 
         self.grid_frame = Frame(self.window, bg="white")
@@ -68,5 +68,5 @@ class Woordle:
 
 
 if __name__ == "__main__":
-    app = Woordle()
+    app = Wordle()
     app.main()
