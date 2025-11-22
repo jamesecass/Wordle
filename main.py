@@ -9,7 +9,7 @@ class wordle:
     def __init__(self):
         self.window = Tk()
         self.window.title("Wordle")
-        self.icon = PhotoImage(file="C:\\Users\\james\\Desktop\\Python Folder\\logo.png")
+        self.icon = PhotoImage(file="logo.png")
         self.window.iconphoto(True,self.icon)
 
 
