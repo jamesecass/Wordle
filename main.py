@@ -40,24 +40,24 @@ class Woordle:
 
         if self.guessnum <= 6:
             if len(guess) == 5:
-                    self.guessnum += 1
-                    for i, letter in enumerate(guess):
-                        if self.word == guess:
-                            for x, g_letter in enumerate(guess):
-                                lbl = Label(self.grid_frame, text=g_letter.upper(), font=("Roboto Mono", 25, "bold"), width=2)
-                                lbl.grid(row=self.guessnum, column=x, padx=10, pady=10)
-                                lbl.config(bg=self.GREEN)
-                            messagebox.showinfo("Correct", f"Correct! The word was {self.word}")
-                            break
+                self.guessnum += 1
+                for i, letter in enumerate(guess):
+                    if self.word == guess:
+                        for x, g_letter in enumerate(guess):
+                            lbl = Label(self.grid_frame, text=g_letter.upper(), font=("Roboto Mono", 25, "bold"), width=2)
+                            lbl.grid(row=self.guessnum, column=x, padx=10, pady=10)
+                            lbl.config(bg=self.GREEN)
+                        messagebox.showinfo("Correct", f"Correct! The word was {self.word}")
+                        break
+                    else:
+                        lbl = Label(self.grid_frame, text=letter.upper(), font=("Roboto Mono", 25, "bold"), width=2)
+                        lbl.grid(row=self.guessnum, column=i, padx=10, pady=10)
+                        if letter == self.word[i]:
+                            lbl.config(bg=self.GREEN)
+                        elif letter in self.word:
+                            lbl.config(bg=self.YELLOW)
                         else:
-                            lbl = Label(self.grid_frame, text=letter.upper(), font=("Roboto Mono", 25, "bold"), width=2)
-                            lbl.grid(row=self.guessnum, column=i, padx=10, pady=10)
-                            if letter == self.word[i]:
-                                lbl.config(bg=self.GREEN)
-                            elif letter in self.word:
-                                lbl.config(bg=self.YELLOW)
-                            else:
-                                lbl.config(bg=self.GREY)
+                            lbl.config(bg=self.GREY)
             else:
                 messagebox.showerror("Length error", "Please use a 5-letter word.")
         else:
