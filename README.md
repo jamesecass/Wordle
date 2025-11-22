@@ -1,2 +1,2 @@
 # Wordle
-I made Woordle in Tkinter with python
+I made Wordle in Tkinter with python
